@@ -5,11 +5,20 @@ public class EnterPIN {
 		Scanner keyboard = new Scanner(System.in);
 		int pin, entry;
 		
+		String password = "hunter2", passwordEntry;
 		pin = 12345;
 		
 		System.out.println("WELCOME TO THE BANK OF JAVA.");
-		System.out.print("ENTER YOUR PIN: ");
+		System.out.print("ENTER YOUR PASSWORD: ");
+		passwordEntry = keyboard.nextLine();
 		
+		while (! passwordEntry.equals(password)) {
+			System.out.println("\nINCORRECT PASSWORD. TRY AGAIN, QUINTESSENCE OF DUST.");
+			System.out.print("ENTER YOUR PASSWORD: ");
+			passwordEntry = keyboard.nextLine();
+		}
+		
+		System.out.print("ENTER YOUR PIN: ");
 		entry = keyboard.nextInt();
 		
 		while (entry != pin) {
